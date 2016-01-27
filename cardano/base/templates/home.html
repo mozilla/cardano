@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="dashboard-block">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row text-center">
+          <div class="col-md-6">
+            {{ mozillians.vouched }}
+          </div>
+          <div class="col-md-6">
+            {{ mozillians.total }}
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="row text-center">
+          <div class="col-md-6">
+            Vouched
+          </div>
+          <div class="col-md-6">
+            Total
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dashboard-block">
+    <p class="lead">Countries</p>
+    <div class="form-group">
+      <input type="text" class="form-control" id="filterCountries"
+             placeholder="Start typing country name to filter" autocomplete="off">
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Vouched</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for country in countries %}
+          <tr class="country-block" data-selector="{{ country.name|lower }}">
+            <td>{{ country.name }}</td>
+            <td>{{ country.vouched }}</td>
+            <td>{{ country.total }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

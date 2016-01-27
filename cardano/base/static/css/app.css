@@ -1,0 +1,127 @@
+/* Fonts
+==================== */
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/static/fonts/OpenSans-Regular.eot');
+    src: url('/static/fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/OpenSans-Regular.woff') format('woff'),
+         url('/static/fonts/OpenSans-Regular.ttf') format('truetype'),
+         url('/static/fonts/OpenSans-Regular.svg#open_sans') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/static/fonts/OpenSans-Bold.eot');
+    src: url('/static/fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/OpenSans-Bold.woff') format('woff'),
+         url('/static/fonts/OpenSans-Bold.ttf') format('truetype'),
+         url('/static/fonts/OpenSans-Bold.svg#open_sansbold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/static/fonts/OpenSans-BoldItalic.eot');
+    src: url('/static/fonts/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/OpenSans-BoldItalic.woff') format('woff'),
+         url('/static/fonts/OpenSans-BoldItalic.ttf') format('truetype'),
+         url('/static/fonts/OpenSans-BoldItalic.svg#open_sansbold_italic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/static/fonts/OpenSans-Italic.eot');
+    src: url('/static/fonts/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+         url('/static/fonts/OpenSans-Italic.woff') format('woff'),
+         url('/static/fonts/OpenSans-Italic.ttf') format('truetype'),
+         url('/static/fonts/OpenSans-Italic.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+
+/* Generic
+==================== */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #eee;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.4;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#tabzilla {
+    float: right;
+}
+
+#tabzilla:before {
+    background-color: #66BADD;
+}
+
+#wrapper {
+    min-height: 100%;
+    height: auto;
+    margin-bottom: -130px;
+}
+
+#push {
+    height: 130px;
+}
+
+#footer {
+    height: 130px;
+    background-color: lightgray;
+    padding: 20px;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.navbar-brand > img {
+    height: 30px;
+}
+
+.dashboard-block {
+    margin-bottom: 30px;
+}
+
+.panel-footer {
+    font-weight: bold;
+}
+
+@media only screen and (max-width:992px) {
+    #footer,
+    #push {
+        height: 210px;
+    }
+
+    .navbar-header::after {
+        clear: none;
+    }
+}
+
+@media only screen and (max-width:460px) {
+    #footer,
+    #push {
+        height: 300px;
+    }
+
+    .navbar-brand > img {
+        height: auto;
+        max-width: 120px;
+    }
+}

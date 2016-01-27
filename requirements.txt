@@ -1,0 +1,57 @@
+# Adding peep so we can track it on requires.io. For packages
+# installation we use peep.py shipped in ./bin
+
+# sha256: S_Ra-MKDy4GFnkOxKLHPbTe_lsrRL1XwNlv3uiKhoaM
+peep==3.1
+
+# sha256: 3Bt7ChNnVa9UUPQBGgT-j_jl1GPkNbKlImCI_4TMDNQ
+peepin==0.14
+
+# sha256: n3ygTG288It5Ty6lKDxgFWo36_K4MW0QJ_WU80_2EQE
+Django==1.9.1
+
+# sha256: 8uJz7TSsu1YJYtXPEpF5NtjfAil98JvTCJuFRtRYQTg
+# sha256: ygF2j97N4TQwHzFwdDIm9g7f9cOTXxJDc3jr2RFQY1M
+dj-database-url==0.3.0
+
+# sha256: as-au751fvddwuzZ2RunSVR5Qauv--af8ghqnjfUkEw
+psycopg2==2.6.1
+
+# sha256: mYNMn_fOXFsvShi8CIB1PlTqOqq8PPsWlhqS1QRmZd8
+python-decouple==3.0
+
+# sha256: xX8bAFpLkJMzA8je7Zvt61CTMapqCpkAI6V5blK9iYg
+gunicorn==19.4.5
+
+# sha256: Pt5HDT0XujwHY436DRBFK8G25a0yYSemW6d-aq6xG-w
+pytz==2015.7
+
+# sha256: NPE9CD-55bFyisw90QiGtA-iVO_gO5ftAc7ViSbDjb0
+flake8==2.5.1
+
+# sha256: T8LkeK3c8XAWZX3_MLLY1hHoNB-sGczydogC9mNde4o
+pep8==1.7.0
+
+# sha256: Bx0SHp57MwWKobpd57zpuXv6MUnP4ay7ZYfCH8HI7aE
+pyflakes==1.0.0
+
+# sha256: ET-7pVManjSUW302szoIToul0GZLcDyBp8Vy2RkZpbg
+requests==2.9.1
+
+# sha256: M63XBGg6XX-f9JwD5ApNjFAIglia7pcNXtga0Rx651w
+django-mozilla-product-details==0.10
+
+# sha256: MHG3HvjEMXis6ENQArEfL_Btt2kPB9lgVA6rf0GD3fc
+celery==3.1.20
+# sha256: Z0Gl1-i49TFRqr1H_T3xGVrtVAsWmy12hLkE_xErSDw
+kombu==3.0.33
+# sha256: 4O0M5rj_5WkKLoVseQjcVX4OYFKD1ohd0TYdefKSiQg
+amqp==1.4.9
+# sha256: N4Ethjya0-NcBzTELgvwMgzow77YLNIK1UyzTRWBV7o
+anyjson==0.3.3
+# sha256: 0hYYE4cxf4aWxtHICiSRJY0DdJPB8MbrWJkqVJSB534
+billiard==3.3.0.22
+# sha256: CyRyl4f6FFUAl3CIDqMrH6VVTnUXB2Oxrvix60cN6KM
+sqlalchemy==1.0.11
+# sha256: JUqVsKQ4bfH9lJgjlC9jEsgPujyIxe-tecrYZIvF_rU
+#django-celery==3.1.17
