@@ -4,7 +4,7 @@ from django.db import models
 class Mozillian(models.Model):
     vouched = models.PositiveIntegerField()
     total = models.PositiveIntegerField()
-    created = models.DateTimeField(auto_now_add=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created']
@@ -14,8 +14,8 @@ class Mozillian(models.Model):
 class Country(models.Model):
     vouched = models.PositiveIntegerField()
     total = models.PositiveIntegerField()
-    name = models.CharField(max_length=200, blank=True)
-    created = models.DateTimeField(auto_now_add=True, null=True)
+    name = models.CharField(max_length=200, blank=True, default='')
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created']
