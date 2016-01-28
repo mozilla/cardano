@@ -32,8 +32,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'cardano.base',
-
-    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -103,7 +101,6 @@ MOZILLIANS_API_URL = config('MOZILLIANS_API_URL', default=None)
 MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default=None)
 
 # Celery
-CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 CELERY_TIMEZONE = 'UTC'
 CELERYBEAT_SCHEDULE = {
     'fetch_mozillians': {

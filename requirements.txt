@@ -53,5 +53,3 @@ anyjson==0.3.3
 billiard==3.3.0.22
 # sha256: CyRyl4f6FFUAl3CIDqMrH6VVTnUXB2Oxrvix60cN6KM
 sqlalchemy==1.0.11
-# sha256: JUqVsKQ4bfH9lJgjlC9jEsgPujyIxe-tecrYZIvF_rU
-#django-celery==3.1.17

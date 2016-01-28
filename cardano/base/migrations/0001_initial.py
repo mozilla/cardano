@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('vouched', models.PositiveIntegerField()),
                 ('total', models.PositiveIntegerField()),
-                ('name', models.CharField(blank=True, default=b'', max_length=200)),
+                ('name', models.CharField(blank=True, default='', max_length=200)),
                 ('created', models.DateTimeField(auto_now_add=True)),
             ],
             options={
