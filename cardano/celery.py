@@ -5,7 +5,7 @@ from django.conf import settings
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cardano.settings')
 
-BROKER_URL = 'sqla+sqlite:///celerydb.sqlite'
+BROKER_URL = 'amqp://guest:guest@broker:5672//'
 
 app = Celery('cardano', broker=BROKER_URL)
 

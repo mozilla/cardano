@@ -1,5 +1,15 @@
 db:
   image: postgres:9.3
+broker:
+  image: rabbitmq
+celery:
+  build: .
+  volumes:
+    - .:/code
+  links:
+    - db
+    - broker
+  command: celery -A cardano worker -B -l debug
 web:
   build: .
   ports:
@@ -8,13 +18,5 @@ web:
     - .:/app
   links:
     - db
-  environment:
-    - PYTHONDONTWRITEBYTECODE=1
-    - DATABASE_URL=postgres://postgres@db/postgres
-    - DEBUG=True
-    - ALLOWED_HOSTS=localhost,127.0.0.1,
-    - SECRET_KEY=59114b6a-2858-4caf-8878-482a24ee9542
-    - MOZILLIANS_API_URL=https://mozillians.org/api/v2/
-    - MOZILLIANS_API_KEY=3e1422f0c7d13ec335705da5da7c557936f19245
   command:
     ./bin/run-dev.sh

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load tags %}
 
 {% block content %}
   <div class="dashboard-block">
@@ -6,9 +7,29 @@
       <div class="panel-body">
         <div class="row text-center">
           <div class="col-md-6">
+            {% if vouched_diff > 0 %}
+              <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" title="{{ vouched_diff }}">
+              </span>
+            {% elif vouched_diff == 0 %}
+              <span class="glyphicon glyphicon-minus" aria-hidden="true" title="{{ vouched_diff }}">
+              </span>
+            {% else %}
+              <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" title="{{ vouched_diff }}">
+              </span>
+            {% endif %}
             {{ mozillians.vouched }}
           </div>
           <div class="col-md-6">
+              <span class="glyphicon
+              {% if total_diff > 0 %}
+                glyphicon-triangle-top
+              {% elif total_diff == 0 %}
+                glyphicon-minus
+              {% else %}
+                glyphicon-triangle-bottom
+              {% endif %}
+                " aria-hidden="true" title="{{ total_diff }}">
+              </span>
             {{ mozillians.total }}
           </div>
         </div>
@@ -45,8 +66,36 @@
         {% for country in countries %}
           <tr class="country-block" data-selector="{{ country.name|lower }}">
             <td>{{ country.name }}</td>
-            <td>{{ country.vouched }}</td>
-            <td>{{ country.total }}</td>
+            <td>
+              {% with vouched_diff=countries_diff|lookup_country_vouched:country.name %}
+                {% if vouched_diff > 0 %}
+                  <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" title="{{ vouched_diff }}">
+                  </span>
+                {% elif vouched_diff == 0 %}
+                  <span class="glyphicon glyphicon-minus" aria-hidden="true" title="{{ vouched_diff }}">
+                  </span>
+                {% else %}
+                  <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" title="{{ vouched_diff }}">
+                  </span>
+                {% endif %}
+              {% endwith %}
+              {{ country.vouched }}
+            </td>
+            <td>
+              {% with total_diff=countries_diff|lookup_country_total:country.name %}
+                {% if total_diff > 0 %}
+                  <span class="glyphicon glyphicon-triangle-top" aria-hidden="true" title="{{ total_diff }}">
+                  </span>
+                {% elif total_diff == 0 %}
+                  <span class="glyphicon glyphicon-minus" aria-hidden="true" title="{{ total_diff }}">
+                  </span>
+                {% else %}
+                  <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" title="{{ total_diff }}">
+                  </span>
+                {% endif %}
+              {% endwith %}
+              {{ country.total }}
+            </td>
           </tr>
         {% endfor %}
       </tbody>
