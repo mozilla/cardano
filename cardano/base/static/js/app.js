@@ -6,6 +6,8 @@ $(document).ready(function() {
         countries.push(obj);
     });
 
+    $('[data-toggle="tooltip"]').tooltip();
+
     var t = $('#filterCountries');
     t.bind('propertychange keyup input paste', function(event) {
         var term = t.val().toLowerCase();
