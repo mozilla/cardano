@@ -41,3 +41,5 @@ requests==2.9.1
 # sha256: M63XBGg6XX-f9JwD5ApNjFAIglia7pcNXtga0Rx651w
 django-mozilla-product-details==0.10
 
+# sha256: Vcb2GXIFOyLo2loBHrTjc82reI5p9Vk8MhSXJglXHMA
+schedule==0.3.2
