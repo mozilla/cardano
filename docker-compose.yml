@@ -1,15 +1,5 @@
 db:
   image: postgres:9.3
-broker:
-  image: rabbitmq
-celery:
-  build: .
-  volumes:
-    - .:/code
-  links:
-    - db
-    - broker
-  command: celery -A cardano worker -B -l debug
 web:
   build: .
   ports:

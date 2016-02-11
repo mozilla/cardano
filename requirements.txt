@@ -41,15 +41,3 @@ requests==2.9.1
 # sha256: M63XBGg6XX-f9JwD5ApNjFAIglia7pcNXtga0Rx651w
 django-mozilla-product-details==0.10
 
-# sha256: MHG3HvjEMXis6ENQArEfL_Btt2kPB9lgVA6rf0GD3fc
-celery==3.1.20
-# sha256: Z0Gl1-i49TFRqr1H_T3xGVrtVAsWmy12hLkE_xErSDw
-kombu==3.0.33
-# sha256: 4O0M5rj_5WkKLoVseQjcVX4OYFKD1ohd0TYdefKSiQg
-amqp==1.4.9
-# sha256: N4Ethjya0-NcBzTELgvwMgzow77YLNIK1UyzTRWBV7o
-anyjson==0.3.3
-# sha256: 0hYYE4cxf4aWxtHICiSRJY0DdJPB8MbrWJkqVJSB534
-billiard==3.3.0.22
-# sha256: CyRyl4f6FFUAl3CIDqMrH6VVTnUXB2Oxrvix60cN6KM
-sqlalchemy==1.0.11
