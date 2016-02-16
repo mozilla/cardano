@@ -99,16 +99,3 @@ TEMPLATES = [
 # API
 MOZILLIANS_API_URL = config('MOZILLIANS_API_URL', default=None)
 MOZILLIANS_API_KEY = config('MOZILLIANS_API_KEY', default=None)
-
-# Celery
-CELERY_TIMEZONE = 'UTC'
-CELERYBEAT_SCHEDULE = {
-    'fetch_mozillians': {
-        'task': 'cardano.base.tasks.fetch_mozillians',
-        'schedule': timedelta(days=7)
-    },
-    'fetch_countries': {
-        'task': 'cardano.base.tasks.fetch_countries',
-        'schedule': timedelta(days=7)
-    },
-}

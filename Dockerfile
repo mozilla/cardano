@@ -9,9 +9,6 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential python-dev libpq-dev postgresql-client gettext && \
     rm -rf /var/lib/apt/lists/*
 
-# Using PIL or Pillow? You probably want to uncomment next line
-RUN apt-get update && apt-get install -y --no-install-recommends libjpeg62-turbo-dev git
-
 WORKDIR /app
 
 # Pin a known to work with peep pip version.
