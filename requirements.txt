@@ -43,3 +43,6 @@ django-mozilla-product-details==0.10
 
 # sha256: Vcb2GXIFOyLo2loBHrTjc82reI5p9Vk8MhSXJglXHMA
 schedule==0.3.2
+# sha256: gm_-XWCMncja6-8bC0PQH3lY8XwvzjbnXIDiYWAXLE8
+# sha256: WuqTXfwJ7yvut2lgtKgIsLvmXoX7CwMSQ0ucNlygKkE
+whitenoise==2.0.6

@@ -1,6 +1,5 @@
 import json
 import os
-from datetime import timedelta
 
 import dj_database_url
 from decouple import Csv, config
@@ -73,6 +72,7 @@ USE_TZ = True
 STATIC_HOST = config('STATIC_HOST', default='')
 STATIC_ROOT = config('STATIC_ROOT', default=os.path.join(BASE_DIR, 'static'))
 STATIC_URL = config('STATIC_URL', STATIC_HOST + '/static/')
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 TEMPLATES = [
     {
