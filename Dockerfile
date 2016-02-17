@@ -6,7 +6,7 @@ CMD ["./bin/run-prod.sh"]
 RUN adduser --uid 1000 --disabled-password --gecos '' --no-create-home webdev
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends build-essential python-dev libpq-dev postgresql-client gettext && \
+    apt-get install -y --no-install-recommends build-essential python-dev libpq-dev postgresql-client git && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
