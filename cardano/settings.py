@@ -1,6 +1,5 @@
 import json
 import os
-from datetime import timedelta
 
 import dj_database_url
 from decouple import Csv, config
