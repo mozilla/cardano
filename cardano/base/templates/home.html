@@ -2,75 +2,78 @@
 {% load tags %}
 
 {% block content %}
-  <div class="dashboard-block">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="row text-center">
-          <div class="col-md-6">
-            {{ mozillians.vouched }}
-            <span data-toggle="tooltip" data-placement="right"
-                  class="glyphicon {{ vouched_diff|glyphicon_type }}" aria-hidden="true"
-                  title="{{ vouched_diff }}"></span>
-          </div>
-          <div class="col-md-6">
-            {{ mozillians.total }}
-            <span data-toggle="tooltip" data-placement="right"
-                  class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
-                  title="{{ total_diff }}"></span>
+  {% if mozillians %}
+    <div class="dashboard-block">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row text-center">
+            <div class="col-md-6">
+              {{ mozillians.vouched }}
+              <span data-toggle="tooltip" data-placement="right"
+                    class="glyphicon {{ vouched_diff|glyphicon_type }}" aria-hidden="true"
+                    title="{{ vouched_diff }}"></span>
+            </div>
+            <div class="col-md-6">
+              {{ mozillians.total }}
+              <span data-toggle="tooltip" data-placement="right"
+                    class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
+                    title="{{ total_diff }}"></span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="panel-footer">
-        <div class="row text-center">
-          <div class="col-md-6">
-            Vouched
-          </div>
-          <div class="col-md-6">
-            Total
+        <div class="panel-footer">
+          <div class="row text-center">
+            <div class="col-md-6">
+              Vouched
+            </div>
+            <div class="col-md-6">
+              Total
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-  </div>
-
-  <div class="dashboard-block">
-    <p class="lead">Countries</p>
-    <div class="form-group">
-      <input type="text" class="form-control" id="filterCountries"
-             placeholder="Start typing country name to filter" autocomplete="off">
-    </div>
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Country</th>
-          <th>Vouched</th>
-          <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for country in countries %}
-          <tr class="country-block" data-selector="{{ country.name|lower }}">
-            <td>{{ country.name }}</td>
-            <td>
-              <div class="country-number">{{ country.vouched }}</div>
-              {% with vouched_diff=countries_diff|lookup_country_vouched:country.name %}
-                <span data-toggle="tooltip" data-placement="right"
-                      class="glyphicon {{ vouched_diff|glyphicon_type }}" aria-hidden="true"
-                      title="{{ vouched_diff }}"></span>
-              {% endwith %}
-            </td>
-            <td>
-              <div class="country-number">{{ country.total }}</div>
-              {% with total_diff=countries_diff|lookup_country_total:country.name %}
-                <span data-toggle="tooltip" data-placement="right"
-                      class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
-                      title="{{ total_diff }}"></span>
-              {% endwith %}
-            </td>
+    <div class="dashboard-block">
+      <p class="lead">Countries</p>
+      <div class="form-group">
+        <input type="text" class="form-control" id="filterCountries"
+               placeholder="Start typing country name to filter" autocomplete="off">
+      </div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Country</th>
+            <th>Vouched</th>
+            <th>Total</th>
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+        </thead>
+        <tbody>
+          {% for country in countries %}
+            <tr class="country-block" data-selector="{{ country.name|lower }}">
+              <td>{{ country.name }}</td>
+              <td>
+                <div class="country-number">{{ country.vouched }}</div>
+                {% with vouched_diff=countries_diff|lookup_country_vouched:country.name %}
+                  <span data-toggle="tooltip" data-placement="right"
+                        class="glyphicon {{ vouched_diff|glyphicon_type }}" aria-hidden="true"
+                        title="{{ vouched_diff }}"></span>
+                {% endwith %}
+              </td>
+              <td>
+                <div class="country-number">{{ country.total }}</div>
+                {% with total_diff=countries_diff|lookup_country_total:country.name %}
+                  <span data-toggle="tooltip" data-placement="right"
+                        class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
+                        title="{{ total_diff }}"></span>
+                {% endwith %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  {% else %}
+    No mozillians data fetched yet.
+  {% endif %}
 {% endblock %}
