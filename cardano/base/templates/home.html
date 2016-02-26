@@ -7,27 +7,33 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="row text-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
               {{ mozillians.vouched }}
               <span data-toggle="tooltip" data-placement="right"
                     class="glyphicon {{ vouched_diff|glyphicon_type }}" aria-hidden="true"
                     title="{{ vouched_diff }}"></span>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               {{ mozillians.total }}
               <span data-toggle="tooltip" data-placement="right"
                     class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
                     title="{{ total_diff }}"></span>
             </div>
+            <div class="col-md-4">
+              {{ ratio }}
+            </div>
           </div>
         </div>
         <div class="panel-footer">
           <div class="row text-center">
-            <div class="col-md-6">
+            <div class="col-md-4">
               Vouched
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               Total
+            </div>
+            <div class="col-md-4">
+              Ratio (%)
             </div>
           </div>
         </div>
@@ -46,6 +52,7 @@
             <th>Country</th>
             <th>Vouched</th>
             <th>Total</th>
+            <th>Ratio (%)</th>
           </tr>
         </thead>
         <tbody>
@@ -66,6 +73,11 @@
                   <span data-toggle="tooltip" data-placement="right"
                         class="glyphicon {{ total_diff|glyphicon_type }}" aria-hidden="true"
                         title="{{ total_diff }}"></span>
+                {% endwith %}
+              </td>
+              <td>
+                {% with ratio=countries_diff|lookup_country_ratio:country.name %}
+                  {{ ratio }}
                 {% endwith %}
               </td>
             </tr>

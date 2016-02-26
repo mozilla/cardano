@@ -16,6 +16,12 @@ def lookup_country_total(countries, key):
 
 
 @register.filter
+def lookup_country_ratio(countries, key):
+    q = max(countries, key=lambda d: (d['name'] == key))
+    return q['ratio']
+
+
+@register.filter
 def glyphicon_type(number):
     if number > 0:
         return 'glyphicon-triangle-top'
